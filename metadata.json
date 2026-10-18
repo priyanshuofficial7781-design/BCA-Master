@@ -1,0 +1,6 @@
+{
+  "name": "BCA Career Planner",
+  "description": "Premium mobile-first learning roadmap, study planner, and career development hub for BCA students.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E231F" />
+      <stop offset="50%" stop-color="#091714" />
+      <stop offset="100%" stop-color="#040D0B" />
+    </linearGradient>
+    <linearGradient id="neonEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="50%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="emeraldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Diamond Crest Outer Frame -->
+  <polygon points="200,15 365,185 200,380 35,185" fill="url(#aiBg)" stroke="url(#neonEmerald)" stroke-width="6" />
+  <polygon points="200,32 348,185 200,362 52,185" fill="none" stroke="#34D399" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="6,4" />
+
+  <!-- Center Synapse Glow -->
+  <circle cx="200" cy="185" r="85" fill="#10B981" opacity="0.22" filter="url(#emeraldGlow)" />
+
+  <!-- Neural Core Network (Axons & Synapses) -->
+  <g stroke="#34D399" stroke-width="2.5" opacity="0.8">
+    <line x1="200" y1="185" x2="135" y2="135" />
+    <line x1="200" y1="185" x2="265" y2="135" />
+    <line x1="200" y1="185" x2="135" y2="235" />
+    <line x1="200" y1="185" x2="265" y2="235" />
+    <line x1="135" y1="135" x2="90" y2="185" />
+    <line x1="135" y1="235" x2="90" y2="185" />
+    <line x1="265" y1="135" x2="310" y2="185" />
+    <line x1="265" y1="235" x2="310" y2="185" />
+    <line x1="135" y1="135" x2="200" y2="100" />
+    <line x1="265" y1="135" x2="200" y2="100" />
+  </g>
+
+  <!-- Synapse Nodes -->
+  <circle cx="200" cy="185" r="22" fill="#064E3B" stroke="#6EE7B7" stroke-width="4" filter="url(#emeraldGlow)" />
+  <circle cx="200" cy="185" r="8" fill="#FFFFFF" />
+  <circle cx="135" cy="135" r="10" fill="#064E3B" stroke="#34D399" stroke-width="2.5" />
+  <circle cx="265" cy="135" r="10" fill="#064E3B" stroke="#34D399" stroke-width="2.5" />
+  <circle cx="135" cy="235" r="10" fill="#064E3B" stroke="#34D399" stroke-width="2.5" />
+  <circle cx="265" cy="235" r="10" fill="#064E3B" stroke="#34D399" stroke-width="2.5" />
+  <circle cx="90" cy="185" r="8" fill="#064E3B" stroke="#34D399" stroke-width="2" />
+  <circle cx="310" cy="185" r="8" fill="#064E3B" stroke="#34D399" stroke-width="2" />
+  <circle cx="200" cy="100" r="9" fill="#064E3B" stroke="#34D399" stroke-width="2" />
+
+  <!-- Title Banner Tab -->
+  <rect x="80" y="318" width="240" height="34" rx="8" fill="#062820" stroke="#34D399" stroke-width="2" />
+  <text x="200" y="340" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">
+    AI/ML NEURAL CORE
+  </text>
+</svg>

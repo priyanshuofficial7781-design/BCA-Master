@@ -1,0 +1,360 @@
+@import "tailwindcss";
+
+:root {
+  --bg-main: #06050C;
+  --bg-secondary: #0A0818;
+  --card-surface: #100E22;
+  --card-elevated: #16132D;
+  --primary-purple: #8B3DFF;
+  --bright-violet: #B46CFF;
+  --neon-cyan: #00F0FF;
+  --electric-blue: #4D79FF;
+  --cyber-pink: #FF2E93;
+  --neon-green: #00FF9D;
+  --text-main: #F7F5FF;
+  --text-secondary: #AAA9C6;
+  --border-subtle: rgba(139, 61, 255, 0.25);
+  --border-glow: rgba(180, 108, 255, 0.45);
+}
+
+body {
+  background-color: var(--bg-main);
+  background-image:
+    radial-gradient(ellipse 90% 40% at 50% -10%, rgba(139, 61, 255, 0.22), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 100% 25%, rgba(0, 240, 255, 0.10), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 0% 70%, rgba(255, 46, 147, 0.08), transparent 60%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(77, 121, 255, 0.12), transparent 75%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Cyberpunk Obsidian Glass Design System
+   ========================================================================== */
+
+/* Obsidian Glass Panels with High Depth & Specular Reflection */
+.cyber-glass {
+  background: linear-gradient(135deg, rgba(16, 14, 34, 0.88) 0%, rgba(10, 8, 24, 0.94) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(180, 108, 255, 0.28);
+  box-shadow:
+    0 10px 40px -10px rgba(0, 0, 0, 0.75),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.12),
+    0 0 15px -3px rgba(139, 61, 255, 0.22);
+}
+
+.cyber-card {
+  background: linear-gradient(145deg, rgba(22, 19, 45, 0.85) 0%, rgba(12, 10, 26, 0.92) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(180, 108, 255, 0.22);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-card:hover {
+  border-color: rgba(180, 108, 255, 0.48);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.8),
+    0 0 25px -4px rgba(139, 61, 255, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Sharp Neon Glowing Borders */
+.neon-border-violet {
+  border: 1px solid rgba(180, 108, 255, 0.45);
+  box-shadow: 0 0 18px rgba(139, 61, 255, 0.3), inset 0 0 12px rgba(139, 61, 255, 0.1);
+}
+
+.neon-border-cyan {
+  border: 1px solid rgba(0, 240, 255, 0.45);
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.3), inset 0 0 12px rgba(0, 240, 255, 0.1);
+}
+
+.neon-border-pink {
+  border: 1px solid rgba(255, 46, 147, 0.45);
+  box-shadow: 0 0 18px rgba(255, 46, 147, 0.3), inset 0 0 12px rgba(255, 46, 147, 0.1);
+}
+
+/* Volumetric Neon Glow Utilities */
+.glow-purple {
+  box-shadow: 0 0 28px -4px rgba(139, 61, 255, 0.45);
+}
+
+.glow-purple-lg {
+  box-shadow: 0 0 50px -6px rgba(139, 61, 255, 0.55);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 28px -4px rgba(0, 240, 255, 0.45);
+}
+
+.glow-subtle {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Subtle Animated Cyber Grid Background */
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(139, 61, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 61, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Hologram Shimmer Animation */
+@keyframes holoScan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.6; }
+  100% { transform: translateY(200%); opacity: 0; }
+}
+
+.hologram-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.hologram-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.8), rgba(180, 108, 255, 0.8), transparent);
+  animation: holoScan 4s linear infinite;
+  pointer-events: none;
+}
+
+/* Custom 3D floating keyframes */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+/* Smooth customized scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #06050C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F1935;
+  border-radius: 9999px;
+  border: 1px solid rgba(139, 61, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3B2E60;
+  box-shadow: 0 0 10px rgba(139, 61, 255, 0.5);
+}
+
+/* Tabular figures for data, numbers and counters */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Safe area support for mobile devices */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+
+/* ==========================================================================
+   High Contrast Light Mode (Daytime Sunlight Readability)
+   ========================================================================== */
+[data-theme="light"],
+.light-theme {
+  --bg-main: #F4F6FC;
+  --bg-secondary: #FFFFFF;
+  --card-surface: #FFFFFF;
+  --card-elevated: #F8F9FE;
+  --primary-purple: #6D28D9;
+  --bright-violet: #7C3AED;
+  --neon-cyan: #0284C7;
+  --electric-blue: #2563EB;
+  --cyber-pink: #E11D48;
+  --neon-green: #059669;
+  --text-main: #0E0A24;
+  --text-secondary: #474363;
+  --border-subtle: #D8D6EC;
+  --border-glow: rgba(109, 40, 217, 0.35);
+}
+
+[data-theme="light"] body,
+.light-theme body {
+  background-color: #F4F6FC !important;
+  background-image:
+    radial-gradient(ellipse 90% 40% at 50% -10%, rgba(109, 40, 217, 0.08), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 100% 25%, rgba(2, 132, 199, 0.06), transparent 60%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(37, 99, 235, 0.06), transparent 75%) !important;
+  color: #0E0A24 !important;
+}
+
+/* Structural Shell Elements */
+[data-theme="light"] aside,
+.light-theme aside {
+  background-color: #FFFFFF !important;
+  border-color: #E2E0F0 !important;
+  color: #0E0A24 !important;
+  box-shadow: 2px 0 16px rgba(14, 10, 36, 0.04) !important;
+}
+
+[data-theme="light"] header,
+.light-theme header {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  border-color: #E2E0F0 !important;
+  color: #0E0A24 !important;
+  box-shadow: 0 4px 20px rgba(14, 10, 36, 0.05) !important;
+}
+
+[data-theme="light"] nav,
+.light-theme nav {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-color: #E2E0F0 !important;
+  color: #0E0A24 !important;
+  box-shadow: 0 -4px 20px rgba(14, 10, 36, 0.05) !important;
+}
+
+/* High Contrast Card Surfaces */
+[data-theme="light"] .cyber-glass,
+[data-theme="light"] .cyber-card,
+.light-theme .cyber-glass,
+.light-theme .cyber-card {
+  background: #FFFFFF !important;
+  border-color: #D8D5ED !important;
+  box-shadow: 0 4px 24px rgba(14, 10, 36, 0.06) !important;
+  color: #0E0A24 !important;
+}
+
+/* Dark surface replacements in Light Mode */
+[data-theme="light"] .bg-\[\#13111C\],
+[data-theme="light"] .bg-\[\#161424\],
+[data-theme="light"] .bg-\[\#181335\],
+[data-theme="light"] .bg-\[\#100E22\],
+[data-theme="light"] .bg-\[\#0A0816\],
+[data-theme="light"] .bg-\[\#141126\],
+[data-theme="light"] .bg-\[\#1D192E\],
+[data-theme="light"] .bg-\[\#1A1629\],
+[data-theme="light"] .bg-\[\#1A1828\],
+[data-theme="light"] .bg-\[\#171424\],
+[data-theme="light"] .bg-\[\#1D1836\],
+[data-theme="light"] .bg-\[\#12101F\],
+[data-theme="light"] .bg-\[\#16132D\],
+[data-theme="light"] .bg-\[\#201C33\],
+[data-theme="light"] .bg-\[\#070711\],
+[data-theme="light"] .bg-\[\#0C0A14\],
+[data-theme="light"] .bg-\[\#0C0A17\]\/95,
+[data-theme="light"] .bg-\[\#070512\]\/90,
+[data-theme="light"] .bg-\[\#13102B\]\/90,
+[data-theme="light"] .bg-\[\#0A0818\]\/90,
+.light-theme .bg-\[\#13111C\],
+.light-theme .bg-\[\#161424\],
+.light-theme .bg-\[\#181335\],
+.light-theme .bg-\[\#100E22\],
+.light-theme .bg-\[\#0A0816\],
+.light-theme .bg-\[\#141126\],
+.light-theme .bg-\[\#1D192E\],
+.light-theme .bg-\[\#1A1629\],
+.light-theme .bg-\[\#1A1828\],
+.light-theme .bg-\[\#171424\],
+.light-theme .bg-\[\#1D1836\],
+.light-theme .bg-\[\#12101F\],
+.light-theme .bg-\[\#16132D\],
+.light-theme .bg-\[\#201C33\],
+.light-theme .bg-\[\#070711\],
+.light-theme .bg-\[\#0C0A14\] {
+  background-color: #FFFFFF !important;
+  border-color: #D8D5ED !important;
+}
+
+/* Modals & Dialogs in Light Mode */
+[data-theme="light"] [role="dialog"],
+.light-theme [role="dialog"] {
+  color: #0E0A24 !important;
+}
+
+/* High Contrast Text overrides in Light Mode */
+[data-theme="light"] .text-white,
+.light-theme .text-white {
+  color: #0E0A24 !important;
+}
+
+[data-theme="light"] .text-\[\#F7F5FF\],
+.light-theme .text-\[\#F7F5FF\] {
+  color: #0E0A24 !important;
+}
+
+[data-theme="light"] .text-\[\#AAA9C6\],
+[data-theme="light"] .text-\[\#AAA5B6\],
+[data-theme="light"] .text-\[\#9E99AF\],
+[data-theme="light"] .text-\[\#9590A6\],
+[data-theme="light"] .text-\[\#9F9AB0\],
+.light-theme .text-\[\#AAA9C6\],
+.light-theme .text-\[\#AAA5B6\],
+.light-theme .text-\[\#9E99AF\],
+.light-theme .text-\[\#9590A6\],
+.light-theme .text-\[\#9F9AB0\] {
+  color: #4A4666 !important;
+}
+
+/* High Contrast Input & Controls */
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea,
+.light-theme input,
+.light-theme select,
+.light-theme textarea {
+  background-color: #F8F9FE !important;
+  color: #0E0A24 !important;
+  border-color: #CBD5E1 !important;
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder,
+.light-theme input::placeholder,
+.light-theme textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+[data-theme="light"] input:focus,
+[data-theme="light"] select:focus,
+[data-theme="light"] textarea:focus,
+.light-theme input:focus,
+.light-theme select:focus,
+.light-theme textarea:focus {
+  border-color: #7C3AED !important;
+  background-color: #FFFFFF !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15) !important;
+}
+
+/* Custom Scrollbar for Light Theme */
+[data-theme="light"] ::-webkit-scrollbar-track,
+.light-theme ::-webkit-scrollbar-track {
+  background: #F1F3FA !important;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb,
+.light-theme ::-webkit-scrollbar-thumb {
+  background: #CBD5E1 !important;
+  border-color: #E2E8F0 !important;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover,
+.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8 !important;
+}

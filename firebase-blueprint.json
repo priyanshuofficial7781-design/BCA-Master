@@ -1,0 +1,27 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with LeetCode, GitHub, career preferences, and academic planner stats",
+      "type": "object",
+      "properties": {
+        "profile": {
+          "type": "object",
+          "description": "Student career and placement profile state"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of last profile update"
+        }
+      },
+      "required": ["profile", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Private student document containing placement profiles, LeetCode/GitHub links, and synced state"
+    }
+  }
+}

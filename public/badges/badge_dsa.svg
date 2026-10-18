@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#19132B" />
+      <stop offset="50%" stop-color="#100C1D" />
+      <stop offset="100%" stop-color="#07060D" />
+    </linearGradient>
+    <linearGradient id="neonViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C084FC" />
+      <stop offset="50%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#7E22CE" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Hexagonal Aegis Outer Frame -->
+  <polygon points="200,20 360,110 360,290 200,380 40,290 40,110" fill="url(#bgGrad)" stroke="url(#neonViolet)" stroke-width="6" />
+  <polygon points="200,36 345,118 345,282 200,364 55,282 55,118" fill="none" stroke="#C084FC" stroke-width="1.5" stroke-opacity="0.35" stroke-dasharray="6,4" />
+
+  <!-- Core Ambient Glow -->
+  <circle cx="200" cy="190" r="85" fill="#A855F7" opacity="0.22" filter="url(#glow)" />
+
+  <!-- Binary Matrix Streams -->
+  <g fill="#A855F7" opacity="0.3" font-family="monospace" font-size="11" font-weight="bold">
+    <text x="80" y="140">10110</text>
+    <text x="270" y="140">01101</text>
+    <text x="75" y="260">O(logN)</text>
+    <text x="265" y="260">O(V+E)</text>
+  </g>
+
+  <!-- Central Algorithm Tree / Graph Node Architecture -->
+  <circle cx="200" cy="120" r="16" fill="#1E1638" stroke="#C084FC" stroke-width="4" filter="url(#glow)" />
+  <circle cx="140" cy="195" r="14" fill="#1E1638" stroke="#A855F7" stroke-width="3" />
+  <circle cx="260" cy="195" r="14" fill="#1E1638" stroke="#A855F7" stroke-width="3" />
+  <circle cx="105" cy="265" r="12" fill="#1E1638" stroke="#818CF8" stroke-width="3" />
+  <circle cx="175" cy="265" r="12" fill="#1E1638" stroke="#818CF8" stroke-width="3" />
+  <circle cx="225" cy="265" r="12" fill="#1E1638" stroke="#818CF8" stroke-width="3" />
+  <circle cx="295" cy="265" r="12" fill="#1E1638" stroke="#818CF8" stroke-width="3" />
+
+  <!-- Connecting laser graph edges -->
+  <line x1="200" y1="136" x2="140" y2="181" stroke="#C084FC" stroke-width="3" />
+  <line x1="200" y1="136" x2="260" y2="181" stroke="#C084FC" stroke-width="3" />
+  <line x1="140" y1="209" x2="105" y2="253" stroke="#A855F7" stroke-width="2.5" />
+  <line x1="140" y1="209" x2="175" y2="253" stroke="#A855F7" stroke-width="2.5" />
+  <line x1="260" y1="209" x2="225" y2="253" stroke="#A855F7" stroke-width="2.5" />
+  <line x1="260" y1="209" x2="295" y2="253" stroke="#A855F7" stroke-width="2.5" />
+
+  <!-- Center node glowing diamond star -->
+  <polygon points="200,112 206,120 200,128 194,120" fill="#FFFFFF" />
+
+  <!-- Title Banner Tab -->
+  <rect x="90" y="318" width="220" height="34" rx="8" fill="#150F26" stroke="#C084FC" stroke-width="2" />
+  <text x="200" y="340" font-family="system-ui, sans-serif" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">
+    DSA VANGUARD
+  </text>
+</svg>
